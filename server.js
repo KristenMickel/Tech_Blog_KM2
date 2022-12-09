@@ -1,3 +1,27 @@
+/*Notes:
+We are now dealing with a design principle called "Separation of Concerns", which views that each sectin of a program should only address a separate concern.
+The Model-View-Controller framework is an architectural pattern that adheres to this principle.
+The Model is only concerned with storing data and data-related logic.
+The View is only concerned with UI/UX issues, essentially what the user will see and interact with.
+The Controllers is the interface/middleman between the Model and View. It processes requests from the View, uses the Model to manipulate data, and sends data to the View for rendering. It is essentially the routes in Express.js.
+A Template Engine is used to render views. It is software that allows us to combine data with a static template to generate dynamic HTML. It offers variables (placholders for the data to include), functions, conditional rendering and looping, and text replacement. Handlebars is the TE used in this challenge/module. It is an extension of the templating language Mustache.
+The benefits of using a TE are:
+1). It helps you to follow the separation of concerns principle by providing an easy, clean way to separate HTML and JS.
+2). It offers tools that reduce repitition in code.
+3). It is easy to create, use, and maintain.
+4). It improves search engine optimization and makes fewer client-to-server requests.*/
+
+/*Required Folder Structure (necessary in order to be able to work with express-handlebars):
+1). controllers - is the replacement for the "routes" folder.
+2). config - has the database connection file.
+3). db - has the database schema file.
+4). models - has the Sequelize model files.
+5). public - holds any CSS or frontend Javascript, or any needed images.
+6). seeds - has the files with the data used for seeding the database.
+7). utils - is where to store any utility functions that you want to be able to re-use like the helpers.js file.
+8). views - has layouts and partials.
+*/
+
 const path = require('path');
 const express = require('express');
 
