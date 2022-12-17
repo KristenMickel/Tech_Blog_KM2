@@ -1,14 +1,14 @@
 [
     {
-      "title": "Jim's blog",
+      "name": "Jim's blog",
       "description": "This is my first blog."
     },
     {
-      "title": "John's blog",
+      "name": "John's blog",
       "description": "This is my first blog."
     },
     {
-      "title": "Joe's blog",
+      "name": "Joe's blog",
       "description": "This is my first blog."
     }
   ]

@@ -13,7 +13,7 @@ Blog.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    title: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
