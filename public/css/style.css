@@ -1,4 +1,4 @@
-/* header, .project:not(:last-child) {
+header, .project:not(:last-child) {
     border-bottom: 1px solid #ccc;
   }
   
@@ -22,8 +22,7 @@
     font-weight: bold;
     margin-left: -5px;
   }
-   */
-
+  
    :root {
     --primary: #389393;
     --secondary: #f5a25d;
@@ -88,7 +87,7 @@
     background-color: #ebebeb;
   }
   
-  .add-dish-container {
+  .add-blog-container {
     display: flex;
     flex-wrap: wrap;
     width: 50%;
@@ -105,7 +104,7 @@
     background-color: var(--tertiary);
   }
   
-  .edit-dish-container {
+  .edit-blog-container {
     display: flex;
     flex-wrap: wrap;
     width: 35%;
