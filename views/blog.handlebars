@@ -1,4 +1,4 @@
-<div class="text-center">
+{{!-- <div class="text-center">
   <h2>{{name}}</h2>
   <p>{{{get_emoji}}}</p>
   <p>{{description}}</p>
@@ -8,4 +8,41 @@
   <p>
     <button class="btn btn-primary">Blog!</button>
   </p>
+</div> --}}
+
+<div class="blog-card">
+  <div class="blog-card-header">
+    {{name}}
+  </div>
+  <div class="card-body">
+    <p>
+      Description:
+      {{description}}
+    </p>
+  </div>
 </div>
+
+<div class="edit-dish-container">
+  <form class="edit-dish-form">
+    <label for="dish_name">
+      Blog Title:
+    </label>
+    <br />
+    <textarea id="dish_name" name="dish_name" rows="2" cols="30">
+      {{dish_name}}
+    </textarea>
+    <br />
+    <label for="description">
+      Description:
+    </label>
+    <br />
+    <textarea id="description" name="description" rows="5" cols="30">
+      {{description}}
+    </textarea>
+    <br />
+    <button type="submit" value="Submit">
+      Submit
+    </button>
+  </form>
+</div>
+<script src="/js/edit-dish.js"></script>
