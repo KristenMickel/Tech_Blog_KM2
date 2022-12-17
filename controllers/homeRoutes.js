@@ -4,7 +4,7 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    // Get all blog entries and JOIN with user data
+    //This gets all of the blog entries and JOINs with the appropriate user data.
     const blogData = await Blog.findAll({
       include: [
         {
@@ -14,10 +14,11 @@ router.get('/', async (req, res) => {
       ],
     });
 
-    // Serialize data so the template can read it
+    /*Here, "get plain true" will give me back a plain object, just the data values. The plain data is what will work with the templates I am using. Sequelize will return a complex object that has methods. But that will not work for my template.
+    I am using "map" to iterate over my blogData.
+    Then, I am rendering the template.*/
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
 
-    // Pass serialized data and session flag into template
     res.render('homepage', { 
       blogs, 
       logged_in: req.session.logged_in 
@@ -29,6 +30,7 @@ router.get('/', async (req, res) => {
 
 router.get('/blog/:id', async (req, res) => {
   try {
+    //This will search the database for a dish with an id that matches params.
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
         {
@@ -49,10 +51,10 @@ router.get('/blog/:id', async (req, res) => {
   }
 });
 
-// Use withAuth middleware to prevent access to route
+//withAuth is middleware.
 router.get('/profile', withAuth, async (req, res) => {
   try {
-    // Find the logged in user based on the session ID
+    //This find the logged-in user based on their session ID.
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
       include: [{ model: Blog }],
@@ -70,7 +72,7 @@ router.get('/profile', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
+  //If the user is already logged in, then redirect the request to another route.
   if (req.session.logged_in) {
     res.redirect('/profile');
     return;
