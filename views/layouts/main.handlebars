@@ -1,3 +1,5 @@
+<!-- This file is part of the View. It handles UI/UX concerns (layout and display)-->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +15,7 @@
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
       <h1>
-        <span>Blog!</span>
+        <a href="/">Enter your next blog!</a>
       </h1>
       <nav>
         <!-- Conditionally render login or logout links -->
@@ -26,7 +28,7 @@
       </nav>
     </header>
     <main class="container container-fluid mt-5">
-      <!-- Render the sub layout -->
+      <!-- The following line is a place holder for where the main content will be rendered. Placeholder where the main content will be rendered. Main content will come from the other handlebar files. -->
       {{{ body }}}
     </main>
     <footer>
@@ -34,7 +36,6 @@
     </footer>
   </div>
 
-  <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
   {{/if}}
